@@ -1,9 +1,24 @@
+import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Customers',
+  title: 'All Customers',
 };
 
 export default function Page() {
-  return <p>Customers Page</p>
+  return (
+    <main>
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: 'Customers', href: '/dashboard/customers' },
+          {
+            label: 'All Customers',
+            href: `/dashboard/customers`,
+            active: true,
+          },
+        ]}
+      />
+      <p>Work in progress</p>
+    </main>
+  );
 }
